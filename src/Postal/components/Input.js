@@ -2,7 +2,7 @@ import React from "react";
 import ButtonImage from "../utils/Searcher.png"; // import image file
 import {useState} from 'react';
 
-const Input = () => {
+const Input = ({onHandleInput}) => {
   const [numbers, setNumbers] = useState("")
   
 
@@ -12,7 +12,7 @@ const Input = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(numbers)
+        onHandleInput(numbers);
     }
 
 
