@@ -5,7 +5,6 @@ import React from "react";
 const PostCard= props => {
     return (
         <div>
-        <a className='group'>
         <div className='2-full bg-gray-200 rounded-3xl overflow-hidden'>
         <div className="flex justify-center">
         <div class="inline-flex  rounded-md shadow-sm">
@@ -33,9 +32,6 @@ const PostCard= props => {
             {props.body}
         </h3>
         <button>buton</button>
-        </a>
-        
-   
 </div>
         
     )
