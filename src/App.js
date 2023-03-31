@@ -1,14 +1,13 @@
-import React from "react";
-import PostalLookup from "./Postal/PostalLookup";
+import Universities from "./Universities/Universities";
 import Home from "./Home/Home";
+import PostalLookup from "./Postal/PostalLookup";
 
 const App = () => {
   return (
-    <div>
-        <PostalLookup/>
-        <Home/>
-    </div>
-
+   <Home/>
+   <Universities/>
+   <PostalLookup/>
   )
+}
 
 export default App;
