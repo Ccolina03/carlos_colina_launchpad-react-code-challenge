@@ -1,10 +1,11 @@
 import React from "react";
 import Universities from "./Universities/Universities";
+import Home from "./Home/Home";
 
 const App = () => {
-  return (<div> 
- <Universities/>
-  </div>
+  return (
+   <Home/>
+    <Universities/>
   )
 }
 
