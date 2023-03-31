@@ -5,3 +5,11 @@ export const getPosts = () => {
     .then(response => response.data)
     .catch(error => console.log(error));
 };
+
+
+export const getPostId = (id) => {
+  return axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then(response => response.data)
+    .catch(error => console.log(error));
+};
+
