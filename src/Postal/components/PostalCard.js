@@ -1,13 +1,6 @@
 import React from "react";
 
 const PostalCard = ({onPostalData}) => {
-    if (!onPostalData || onPostalData.length === 0) {
-        return(
-            <div>
-                Try another postal code
-            </div>
-        )
-    }
     return(
         <div className="flex justify-center">
         <div class="p-10">  
@@ -30,9 +23,9 @@ const PostalCard = ({onPostalData}) => {
       </ul>
           </div>
           <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#university</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#education</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#students</span>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#postalcode</span>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#houses</span>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#information</span>
           </div>
         </div>
       </div>
