@@ -14,13 +14,13 @@ const Home = () => {
         setSearch(numbers)
     }
 
-    return(
-        <div> 
-        <TabBar/>
-        <Intro/>
-        <Input onHandleInput={HandleInput}/>
-        {search && <PostsList onSearch={search}/>}
+    return (
+        <div>
+            <TabBar/>
+            <Intro/>
+            <Input onHandleInput={HandleInput}/>
+            {(search !== "") ? <PostsList onSearch={search}/> : <PostsList />}
         </div>
-    )
+    );
 }
 export default Home;
