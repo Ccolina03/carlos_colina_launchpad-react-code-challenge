@@ -9,10 +9,10 @@ const TabBar = () => {
                     Vog Challenge
                 </span>
                 <div className="space-x-5">
-                    <Link to="/" className="text-lg pt-1 font-light text-white">
+                    <Link to="/carlos_colina_launchpad-react-code-challenge/" className="text-lg pt-1 font-light text-white">
                         Home
                     </Link>
-                    <Link to="/postal-lookup" className="text-lg pt-1 font-light text-white">
+                    <Link to="/carlos_colina_launchpad-react-code-challenge/postal-lookup" className="text-lg pt-1 font-light text-white">
                         Postal lookup
                     </Link>
                 </div>

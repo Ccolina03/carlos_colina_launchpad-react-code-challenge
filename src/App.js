@@ -7,12 +7,12 @@ import PostalLookup from './Postal/PostalLookup';
 const App = () => {
   return (
     <Router>
-      <Routes>
-      <Route path="/" element={<Home />} />
-<Route path="/universities" element={<Universities />} />
-<Route path="/postal-lookup" element={<PostalLookup />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/carlos_colina_launchpad-react-code-challenge" element={<Home />} />
+      <Route path="/carlos_colina_launchpad-react-code-challenge/universities" element={<Universities />} />
+      <Route path="/carlos_colina_launchpad-react-code-challenge/postal-lookup" element={<PostalLookup />} />
+    </Routes>
+  </Router>
   );
 };
 

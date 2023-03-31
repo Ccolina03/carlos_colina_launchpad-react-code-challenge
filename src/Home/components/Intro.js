@@ -12,10 +12,10 @@ const Intro = () => {
             Explore options
           </h2>
           <div className="mt-5 max-w-md mx-auto justify-center flex items-center md:mt-8"></div>
-                <NavLink to="/universities" end  className="inline-flex justify-center items-center h-12 px-6 mr-6 py-3 font-medium border-transparent rounded-md bg-gray-900 hover:bg-gray-900 text-white">
+                <NavLink to="/carlos_colina_launchpad-react-code-challenge/universities" end  className="inline-flex justify-center items-center h-12 px-6 mr-6 py-3 font-medium border-transparent rounded-md bg-gray-900 hover:bg-gray-900 text-white">
                 Universities
                 </NavLink>
-                <NavLink to="/postal-lookup" end className="items-center inline-flex font-semibold text-gray-900 hover:text-gray-700">
+                <NavLink to="/carlos_colina_launchpad-react-code-challenge/postal-lookup" end className="items-center inline-flex font-semibold text-gray-900 hover:text-gray-700">
                     Postal Lookup
                 </NavLink>
                 
