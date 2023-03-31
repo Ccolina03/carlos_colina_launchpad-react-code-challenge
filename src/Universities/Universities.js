@@ -1,13 +1,22 @@
 import React from "react";
 import TabBar from "./components/TabBar";
 import Intro from "./components/Intro";
-import UniversitiesList from "./components/UniversitiesList";
+import CountryList from "./components/CountryList";
+import SelectedCountry from "./components/SelectedCountry";
+import { useState } from "react";
+
 const Universities = () => {
+    const [selectedCountry, setSelectedCountry] = useState('');
+
+    const handleCountryChange = (selectedCountry) => {
+      setSelectedCountry(selectedCountry);
+    };
     return(
         <div> 
         <TabBar/>
         <Intro/>
-        <UniversitiesList/>
+        <CountryList onCountryChange={handleCountryChange} />
+      {selectedCountry && <SelectedCountry country={selectedCountry} />}
         </div>
     )
 }
