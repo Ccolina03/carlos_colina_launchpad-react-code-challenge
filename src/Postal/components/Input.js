@@ -13,6 +13,7 @@ const Input = ({onHandleInput}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         onHandleInput(numbers);
+        setNumbers("")
     }
 
 
