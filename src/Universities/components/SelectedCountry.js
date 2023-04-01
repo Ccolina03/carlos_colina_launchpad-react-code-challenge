@@ -6,7 +6,7 @@ const UniversityList = ({ country }) => {
 
   useEffect(() => {
     if (country) {
-      fetch(`http://universities.hipolabs.com/search?country=${country}`)
+      fetch(`https://universities.hipolabs.com/search?country=${country}`)
         .then((response) => response.json())
         .then((data) => setUniversities(data));
     }
