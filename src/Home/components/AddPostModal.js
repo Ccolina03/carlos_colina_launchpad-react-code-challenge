@@ -17,6 +17,7 @@ const AddPostModal = ({ showModal, setShowModal }) => {
         },
         body: JSON.stringify(newPost),
       });
+      console.log(response.status) //giving 200 status code
       if (response.ok) {
         setShowModal(false);
         alert('Post added successfully!');
