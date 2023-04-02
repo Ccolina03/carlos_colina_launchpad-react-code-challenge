@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import UniversityCard from './UniversityCard';
+import { getUniversities } from '../server/api';
 
 const UniversityList = ({ country }) => {
   const [universities, setUniversities] = useState([]);
 
   useEffect(() => {
     if (country) {
-      fetch(`https://universities.hipolabs.com/search?country=${country}`)
-        .then((response) => response.json())
-        .then((data) => setUniversities(data));
+      getUniversities(country).then((data) => setUniversities(data)).catch(error => console.log(error));
     }
   }, [country]);
 
