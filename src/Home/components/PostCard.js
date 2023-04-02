@@ -1,4 +1,4 @@
-mport React, { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import EditPostForm from "./EditPostForm";
 import DeleteForm from "./DeleteForm";

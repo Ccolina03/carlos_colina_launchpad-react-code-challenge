@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getCountries from '../server/api';
+import { getCountries } from '../server/api';
 
 const CountryList = ({ onCountryChange }) => {
   const [countries, setCountries] = useState([]);
