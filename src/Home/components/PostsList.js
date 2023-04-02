@@ -39,16 +39,14 @@ const PostsList = ({onSearch}) => {
     if (postsStatus === 'loading') {
         content = <p> Loading ...</p>
     } else if (postsStatus === 'succeeded'){
+        const postList = onSearch ? specificPost : posts.slice(0, 20);
         content = (
-                <div id="second-section" className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> 
-                    {specificPost.length === 1 ? (
-                        <PostCard key={specificPost[0].id} userId={specificPost[0].userId} id={specificPost[0].id} title={specificPost[0].title} body={specificPost[0].body} />
-                    ) : (
-                        posts.map(post => (
-                            <PostCard key={post.id} userId={post.userId} id={post.id} title={post.title} body={post.body} />
-                        )) 
-                    )}
-                </div>)
+            <div id="second-section" className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                {postList.map(post => (
+                    <PostCard key={post.id} userId={post.userId} id={post.id} title={post.title} body={post.body} />
+                ))}
+            </div>
+        );
     } else if (postsStatus === 'failed') {
         content = <p>{error}</p>
     }
