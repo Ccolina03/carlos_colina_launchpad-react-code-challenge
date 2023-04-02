@@ -10,7 +10,7 @@ import axios from 'axios';
 // };
 
 
-export const getPostId = (id) => {
+export const getPostId = async (id) => {
   return axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
     .then(response => response.data)
     .catch(error => console.log(error));
