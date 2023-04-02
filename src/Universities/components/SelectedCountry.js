@@ -13,7 +13,7 @@ const UniversityList = ({ country }) => {
 
   return (
     <div>
-      {universities.map((university) => (
+      {universities && universities.map((university) => (
        <UniversityCard university={university}/>
       ))}
     </div>
