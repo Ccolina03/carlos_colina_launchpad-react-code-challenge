@@ -29,9 +29,11 @@ const PostCard= props => {
         <h3 className='mt-4 text-lg font-medium text-gray-900'>
             {props.title}
         </h3>
+        <h3> Author: {props.userId} </h3>
         <h3>
             {props.body}
         </h3>
+
         <button>buton</button>
         </a>
         
