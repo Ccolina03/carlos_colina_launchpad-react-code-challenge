@@ -9,6 +9,7 @@ const INITIAL_POSTS_STATE = {
   status: 'idle', // could be idle, loading, succeeded, or failed
   error: null,
   specificPost: null,
+  editPost: null
 };
 
 // getting data from API
@@ -22,16 +23,28 @@ export const fetchPosts = createAsyncThunk(
 
 //getting data from specific id
 export const fetchSpecificPost = createAsyncThunk(
-    'posts/fetchSpecificPost',
-    async (postId) => {
-      if (postId) { 
-         const response = await getPostId(postId);
-        return response;
-      } else {
-        return null //handle empty string to recover default 20 items
-      }
+  'posts/fetchSpecificPost',
+  async (postId) => {
+    if (postId) { 
+       const response = await getPostId(postId);
+      return response;
+    } else {
+      return null //handle empty string to recover default 20 items
     }
-  );
+  }
+);
+
+//editing specific data
+export const editPost = createAsyncThunk(
+  'posts/editPost',
+  async (post) => {
+    const response = await axios.put(
+      `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+      post
+    );
+    return response.data;
+  }
+);
 
 const getPostsSlice = createSlice({
   name: 'posts',
@@ -39,6 +52,7 @@ const getPostsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // fetching all posts
       .addCase(fetchPosts.pending, (state, action) => {
         state.status = 'loading';
       })
@@ -51,6 +65,7 @@ const getPostsSlice = createSlice({
         state.status='failed'
         state.error = action.error.message
       })
+      // fetching specific id post
       .addCase(fetchSpecificPost.pending, (state, action) => {
         state.status = 'loading';
       })
@@ -62,6 +77,18 @@ const getPostsSlice = createSlice({
         state.status='failed'
         state.error = action.error.message
       })
+      // editing specific post
+      .addCase(editPost.pending, (state, action) => {
+        state.status = 'loading';
+      })
+      .addCase(editPost.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.editPost = action.payload;
+      })
+      .addCase(editPost.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   },
 });
 
@@ -69,9 +96,4 @@ export const selectAllPost = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
 
-export default getPostsSlice.reducer
-
-
-
-
-
+export default getPostsSlice.reducer;
