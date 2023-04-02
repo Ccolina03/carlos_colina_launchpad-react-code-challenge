@@ -7,15 +7,21 @@ const UniversityList = ({ country }) => {
 
   useEffect(() => {
     if (country) {
-      getUniversities(country).then((data) => setUniversities(data)).catch(error => console.log(error));
+      getUniversities(country)
+        .then((data) => setUniversities(data))
+        .catch((error) => console.log(error));
     }
   }, [country]);
 
   return (
     <div>
-      {universities && universities.map((university) => (
-       <UniversityCard university={university}/>
-      ))}
+      {universities.length > 0 ? (
+        universities.map((university) => (
+          <UniversityCard university={university} />
+        ))
+      ) : (
+        <p>Loading universities...</p>
+      )}
     </div>
   );
 };
