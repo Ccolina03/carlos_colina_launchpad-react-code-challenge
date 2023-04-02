@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/carlos_colina_launchpad-react-code-challenge/static/css/main.18a4d9b5.css",
-    "main.js": "/carlos_colina_launchpad-react-code-challenge/static/js/main.e67f92bc.js",
+    "main.css": "/carlos_colina_launchpad-react-code-challenge/static/css/main.f098a7eb.css",
+    "main.js": "/carlos_colina_launchpad-react-code-challenge/static/js/main.7186a8b2.js",
     "index.html": "/carlos_colina_launchpad-react-code-challenge/index.html",
-    "main.18a4d9b5.css.map": "/carlos_colina_launchpad-react-code-challenge/static/css/main.18a4d9b5.css.map",
-    "main.e67f92bc.js.map": "/carlos_colina_launchpad-react-code-challenge/static/js/main.e67f92bc.js.map"
+    "main.f098a7eb.css.map": "/carlos_colina_launchpad-react-code-challenge/static/css/main.f098a7eb.css.map",
+    "main.7186a8b2.js.map": "/carlos_colina_launchpad-react-code-challenge/static/js/main.7186a8b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.18a4d9b5.css",
-    "static/js/main.e67f92bc.js"
+    "static/css/main.f098a7eb.css",
+    "static/js/main.7186a8b2.js"
   ]
 }
