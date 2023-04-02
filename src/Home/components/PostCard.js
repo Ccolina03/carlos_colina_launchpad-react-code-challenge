@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import EditPostForm from "./EditPostForm";
 import DeleteForm from "./DeleteForm";
-import { deletePost } from "../../store/GetPostsSlice";
+import { deletePost } from "./store/GetPostsSlice";
 
 
 //Specific Card appearing in HomePage displaying data

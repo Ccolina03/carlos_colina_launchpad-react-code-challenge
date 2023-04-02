@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { getPostId } from '../Home/components/server/api';
+import { getPostId } from '../server/api';
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts?_start=0&_limit=20';
 
@@ -54,6 +54,9 @@ export const deletePost = createAsyncThunk(
       return postId;
     }
   );
+
+
+  //sending post to api
   
 
 

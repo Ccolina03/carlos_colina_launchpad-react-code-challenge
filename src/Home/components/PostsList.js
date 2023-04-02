@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
-import { selectAllPost, getPostsStatus, getPostsError, fetchPosts } from "../../store/GetPostsSlice";
-import { fetchSpecificPost } from "../../store/GetPostsSlice";
+import { selectAllPost, getPostsStatus, getPostsError, fetchPosts} from './store/GetPostsSlice'
+import { fetchSpecificPost } from "./store/GetPostsSlice";
 import PostCard from "./PostCard";
 
 

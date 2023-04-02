@@ -1,11 +1,8 @@
 import React from "react";
 import SearcherImage from './../utils/Searcher.png'; 
 import {useState} from 'react';
-import { useDispatch } from "react-redux";
-import { fetchSpecificPost } from "../../store/GetPostsSlice";
 
 const Input = ({onHandleInput}) => {
-  const dispatch = useDispatch()
   const [numbers, setNumbers] = useState("")
 
   const handleInput =(e) => {

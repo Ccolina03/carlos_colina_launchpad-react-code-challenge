@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deletePost } from '../../store/GetPostsSlice';
+import { deletePost } from './store/GetPostsSlice';
 
 const DeleteForm = ({ postId }) =>  {
   const dispatch = useDispatch();
