@@ -17,7 +17,7 @@ const UniversityList = ({ country }) => {
     <div>
       {universities && universities.length > 0 ? (
         universities.map((university) => (
-          <UniversityCard univnpersity={university} />
+          <UniversityCard university={university} />
         ))
       ) : (
         <p>Loading universities...</p>
