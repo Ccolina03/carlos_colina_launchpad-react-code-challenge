@@ -46,12 +46,24 @@ export const editPost = createAsyncThunk(
   }
 );
 
+//deleting specific post
+export const deletePost = createAsyncThunk(
+    'posts/deletePost',
+    async (postId) => {
+      await axios.delete(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+      return postId;
+    }
+  );
+  
+
+
 const getPostsSlice = createSlice({
   name: 'posts',
   initialState: INITIAL_POSTS_STATE,
   reducers: {},
   extraReducers: (builder) => {
     builder
+
       // fetching all posts
       .addCase(fetchPosts.pending, (state, action) => {
         state.status = 'loading';
@@ -65,6 +77,7 @@ const getPostsSlice = createSlice({
         state.status='failed'
         state.error = action.error.message
       })
+
       // fetching specific id post
       .addCase(fetchSpecificPost.pending, (state, action) => {
         state.status = 'loading';
@@ -77,6 +90,7 @@ const getPostsSlice = createSlice({
         state.status='failed'
         state.error = action.error.message
       })
+
       // editing specific post
       .addCase(editPost.pending, (state, action) => {
         state.status = 'loading';
@@ -84,8 +98,22 @@ const getPostsSlice = createSlice({
       .addCase(editPost.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.editPost = action.payload;
-      })
+      })      
       .addCase(editPost.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+
+      //deleting specific post
+      .addCase(deletePost.pending, (state, action) => {
+        state.status = 'loading';
+      })
+      .addCase(deletePost.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        const postId = action.payload.id;
+        state.posts = state.posts.filter((post) => post.id !== postId);
+      })
+      .addCase(deletePost.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
