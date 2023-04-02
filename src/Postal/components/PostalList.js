@@ -3,6 +3,8 @@ import sendPostalData from "../server/api";
 import { useState, useEffect } from "react";
 import PostalCard from "./PostalCard";
 
+
+//Postal List management and solution to question 4
 const PostalList = ({postal}) => {
    const [postalData, setPostalData]=useState([])
 
